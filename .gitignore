@@ -1,0 +1,14 @@
+## Ignore Visual Studio temporary files and build results ##
+
+# Visual Studio 2022 cache
+.vs/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+
+#  microsoft visual studio settings files
+#*.vcxproj.*
