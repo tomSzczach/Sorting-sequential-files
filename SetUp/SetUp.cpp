@@ -103,7 +103,7 @@ void GenerateDataAutomatically(std::ofstream& tape, std::ofstream& beforeSorting
 
         // randomly generate values in these dimensions
         // calculate Euclidean length of vector
-        // length of vector as key V[0], values of record stored int he rest of vector V
+        // length of vector, vector contains header V[0], values of record stored int he rest of vector V
         V[0] = 0;
         for (unsigned int ithDim = 1; ithDim <= maxNoDim; ithDim++)
         {
@@ -112,10 +112,12 @@ void GenerateDataAutomatically(std::ofstream& tape, std::ofstream& beforeSorting
         }
         V[0] = int(sqrt(double(V[0])));
 
-        // write to files
+        // write to binary file
+        tape.write(reinterpret_cast<const char*>(V.data()), V.size() * sizeof(int));
+
+        // write to text file
         for (unsigned int i = 0; i <= maxNoDim; i++)
         {
-            tape << V[i];
             beforeSorting << V[i] << " ";
             if (i == 0) beforeSorting << "| ";
             if (i == maxNoDim) beforeSorting << std::endl;
@@ -139,10 +141,12 @@ void GenerateDataManually(std::ofstream& tape, std::ofstream& beforeSorting, uns
         }
         V[0] = int(sqrt(double(V[0])));
 
-        // write to files
+        // write to binary file
+        tape.write(reinterpret_cast<const char*>(V.data()), V.size() * sizeof(int));
+
+        // write to text file
         for (unsigned int i = 0; i <= maxNoDim; i++)
         {
-            tape << V[i];
             beforeSorting << V[i] << " ";
             if (i == 0) beforeSorting << "| ";
             if (i == maxNoDim) beforeSorting << std::endl;
