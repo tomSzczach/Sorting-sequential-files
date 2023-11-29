@@ -19,9 +19,15 @@
 
 */
 
+
 #include <iostream>
+
+
+#include "Context.h"
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Context ctx("config.txt");
+    return 0;
 }
