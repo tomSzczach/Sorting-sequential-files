@@ -84,6 +84,9 @@ int main()
     }
     else std::cout << "[!] Unable to open 'tape.bin' or 'beforeSorting.txt' file" << std::endl;
 
+    if (tape.is_open()) tape.close();
+    if (beforeSorting.is_open()) beforeSorting.close();
+
     return 0;
 }
 
