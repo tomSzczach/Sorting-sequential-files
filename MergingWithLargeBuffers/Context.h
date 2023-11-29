@@ -38,6 +38,16 @@ private:
 	unsigned int _numberOfBuffers;
 
 	/*
+	*	size of each buffer in bytes
+	*/
+	std::size_t _bufferSizeInBytes;
+
+	/*
+	*	size of all buffers summed up
+	*/
+	std::size_t _allBuffersSizeInBytes;
+
+	/*
 	*	record type
 	*/
 	RecordType _recordType;
@@ -45,18 +55,36 @@ private:
 	/*
 	*	R - size of a record in type units
 	*/
-	unsigned int _recordSizeInType;
+	std::size_t _recordSizeInType;
 
 	/*
 	*	size of a record in bytes
 	*/
-	unsigned int _recordSizeInBytes;
+	std::size_t _recordSizeInBytes;
+
+	/*
+	*	is config file read successfully?
+	*/
+	bool _isConfigFileRead;
 
 
 public:
 
 	Context(std::string pathToConfigFile);
 
+	bool IsConfigFileReadSuccessfully() const;
+
+	std::size_t EachBufferSizeInBytes() const;
+
+	std::size_t EachBufferSizeInType() const;
+
+	std::size_t AllBuffersSizeInBytes() const;
+
+	std::size_t AllBuffersSizeInType() const;
+
+	unsigned int NumberOfRecords() const;
+
+	unsigned int NumberOfBuffers() const;
 
 };
 

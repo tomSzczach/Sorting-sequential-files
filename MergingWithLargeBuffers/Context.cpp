@@ -1,12 +1,16 @@
 #include "Context.h"
 
+
 Context::Context(std::string pathToConfigFile)
     : _recordType(RECORD_TYPE_INT),
     _numberOfAllRecords(0),
     _numberOfRecordsInBuffer(0),
     _numberOfBuffers(0),
+    _bufferSizeInBytes(0),
+    _allBuffersSizeInBytes(0),
     _recordSizeInType(0),
-    _recordSizeInBytes(0)
+    _recordSizeInBytes(0),
+    _isConfigFileRead(false)
 {
     std::ifstream configFile(pathToConfigFile, std::ios::in);
 
@@ -38,13 +42,57 @@ Context::Context(std::string pathToConfigFile)
         }
         else if (key == "R") 
         {
-            _recordSizeInType = std::stoul(value);
+            _recordSizeInType = std::stoull(value);
         }
     }
     configFile.close();
+    _isConfigFileRead = true;
 
     if (_recordType == RECORD_TYPE_INT)
     {
         _recordSizeInBytes = _recordSizeInType * sizeof(int);
     }
 }
+
+
+bool Context::IsConfigFileReadSuccessfully() const
+{
+    return _isConfigFileRead;
+}
+
+
+std::size_t Context::EachBufferSizeInBytes() const
+{
+    return _numberOfRecordsInBuffer * _recordSizeInBytes;
+}
+
+
+std::size_t Context::EachBufferSizeInType() const
+{
+    return _numberOfRecordsInBuffer * _recordSizeInType;
+}
+
+
+std::size_t Context::AllBuffersSizeInBytes() const
+{
+    return _numberOfBuffers * EachBufferSizeInBytes();
+}
+
+
+std::size_t Context::AllBuffersSizeInType() const
+{
+    return _numberOfBuffers * EachBufferSizeInType();
+}
+
+
+unsigned int Context::NumberOfRecords() const
+{
+    return _numberOfAllRecords;
+}
+
+
+unsigned int Context::NumberOfBuffers() const
+{
+    return _numberOfBuffers;
+}
+
