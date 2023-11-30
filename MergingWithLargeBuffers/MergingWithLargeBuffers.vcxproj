@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="Context.cpp" />
     <ClCompile Include="DiskReader.cpp" />
+    <ClCompile Include="DiskWriter.cpp" />
     <ClCompile Include="MergingWithLargeBuffers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Context.h" />
     <ClInclude Include="DiskReader.h" />
+    <ClInclude Include="DiskWriter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
