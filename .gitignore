@@ -12,6 +12,5 @@ x86/
 
 
 ## Ignore custom config files
-beforeSorting.txt
-config.txt
-tape.bin
+*.txt
+*.bin
