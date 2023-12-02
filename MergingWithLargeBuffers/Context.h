@@ -74,9 +74,13 @@ public:
 
 	bool IsConfigFileReadSuccessfully() const;
 
-	std::size_t EachBufferSizeInBytes() const;
+	std::size_t RecordSizeInBytes() const;
 
-	std::size_t EachBufferSizeInType() const;
+	std::size_t RecordSizeInType() const;
+
+	std::size_t BufferSizeInBytes() const;
+
+	std::size_t BufferSizeInType() const;
 
 	std::size_t AllBuffersSizeInBytes() const;
 
@@ -85,6 +89,8 @@ public:
 	unsigned int NumberOfRecords() const;
 
 	unsigned int NumberOfBuffers() const;
+
+	unsigned int NumberOfRecordsInBuffer() const;
 
 };
 

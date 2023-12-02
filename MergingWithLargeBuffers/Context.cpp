@@ -60,14 +60,24 @@ bool Context::IsConfigFileReadSuccessfully() const
     return _isConfigFileRead;
 }
 
+std::size_t Context::RecordSizeInBytes() const
+{
+    return _recordSizeInBytes;
+}
 
-std::size_t Context::EachBufferSizeInBytes() const
+std::size_t Context::RecordSizeInType() const
+{
+    return _recordSizeInType;
+}
+
+
+std::size_t Context::BufferSizeInBytes() const
 {
     return _numberOfRecordsInBuffer * _recordSizeInBytes;
 }
 
 
-std::size_t Context::EachBufferSizeInType() const
+std::size_t Context::BufferSizeInType() const
 {
     return _numberOfRecordsInBuffer * _recordSizeInType;
 }
@@ -75,13 +85,13 @@ std::size_t Context::EachBufferSizeInType() const
 
 std::size_t Context::AllBuffersSizeInBytes() const
 {
-    return _numberOfBuffers * EachBufferSizeInBytes();
+    return _numberOfBuffers * BufferSizeInBytes();
 }
 
 
 std::size_t Context::AllBuffersSizeInType() const
 {
-    return _numberOfBuffers * EachBufferSizeInType();
+    return _numberOfBuffers * BufferSizeInType();
 }
 
 
@@ -94,5 +104,10 @@ unsigned int Context::NumberOfRecords() const
 unsigned int Context::NumberOfBuffers() const
 {
     return _numberOfBuffers;
+}
+
+unsigned int Context::NumberOfRecordsInBuffer() const
+{
+    return _numberOfRecordsInBuffer;
 }
 
