@@ -86,6 +86,8 @@ public:
 
 	std::size_t AllBuffersSizeInType() const;
 
+	std::size_t AllRecordsSizeInBytes() const;
+
 	unsigned int NumberOfRecords() const;
 
 	unsigned int NumberOfBuffers() const;

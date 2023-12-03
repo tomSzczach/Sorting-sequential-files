@@ -5,14 +5,14 @@
 
 Buffer::Buffer() :
 	_recordSize(0),
-	_numberOfOccupiedRecords(0),
+	occupiedRecords(0),
 	_maxNumberOfRecords(0)
 {}
 
 
 Buffer::Buffer(Context& ctx) :
 	_recordSize(ctx.RecordSizeInType()),
-	_numberOfOccupiedRecords(0),
+	occupiedRecords(0),
 	_maxNumberOfRecords(ctx.NumberOfRecordsInBuffer())
 {
 	_buffer = std::vector<data_t>(_recordSize * _maxNumberOfRecords);
@@ -20,12 +20,6 @@ Buffer::Buffer(Context& ctx) :
 
 
 // trivial getters and setters
-
-std::size_t Buffer::NumberOfOccupiedRecords() const
-{
-	return _numberOfOccupiedRecords;
-}
-
 
 std::size_t Buffer::MaxNumberOfRecords() const
 {
@@ -64,7 +58,9 @@ void Buffer::Print()
 
 void Buffer::DumpToTXT(std::ofstream& fileTXT)
 {
-	for (std::size_t ithValueIdx = 0; ithValueIdx < _buffer.size(); ithValueIdx++)
+	const std::size_t valuesToDump = occupiedRecords * _recordSize;
+
+	for (std::size_t ithValueIdx = 0; ithValueIdx < valuesToDump; ithValueIdx++)
 	{
 		fileTXT << _buffer[ithValueIdx] << " ";
 		if (ithValueIdx % _recordSize == 0) fileTXT << "| ";

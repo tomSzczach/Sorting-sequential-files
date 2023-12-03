@@ -42,6 +42,11 @@ public:
 	*/
 	std::size_t occupiedBuffers;
 
+	/*
+	*	number of records storing in all buffers
+	*/
+	std::size_t occupiedRecords;
+
 
 	// constructors and destructors
 

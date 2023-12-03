@@ -24,17 +24,17 @@ private:
 	const std::size_t _recordSize;
 
 	/*
-	*	current number of non-empty records stored in buffer
-	*/
-	std::size_t _numberOfOccupiedRecords;
-
-	/*
 	*	b - maximum possible numer of records in buffer
 	*/
 	const std::size_t _maxNumberOfRecords;
 
 
 public:
+
+	/*
+	*	current number of non-empty records stored in buffer
+	*/
+	std::size_t occupiedRecords;
 
 	// constructors and destructors
 
@@ -44,8 +44,6 @@ public:
 
 
 	// trivial getters and setters
-
-	std::size_t NumberOfOccupiedRecords() const;
 
 	std::size_t MaxNumberOfRecords() const;
 

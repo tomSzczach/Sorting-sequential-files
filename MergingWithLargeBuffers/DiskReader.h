@@ -21,10 +21,20 @@ private:
 	const std::size_t _bufferSize;
 
 	/*
-	*	first position to read in _inputFile
+	*	first byte to read
 	*/
-	unsigned int _readFromOffset;
+	const std::size_t _firstOffset;
 
+	/*
+	*	last byte to read
+	*/
+	const std::size_t _lastOffset;
+
+	/*
+	*	next byte to read
+	*/
+	std::size_t _currentOffset;
+	 
 	/*
 	*	size of _inputFile in bytes
 	*/
@@ -33,9 +43,9 @@ private:
 
 public:
 
-	DiskReader(std::string inputFile, std::size_t bufferSizeInBytes);
+	DiskReader(std::string inputFile, std::size_t bufferSizeInBytes, std::size_t readFromByte, std::size_t readToByte);
 
-	bool ReadBlock(void* toBuffer);
+	std::size_t ReadBlock(void* toBuffer);
 
 	bool IsSthToRead() const;
 };

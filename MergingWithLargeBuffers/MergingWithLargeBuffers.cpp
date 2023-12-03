@@ -34,7 +34,7 @@
 
 bool StageOne(Context& ctx, Buffers& buffers)
 {
-    DiskReader tapeReader("tape.bin", ctx.BufferSizeInBytes());
+    DiskReader tapeReader("tape.bin", ctx.BufferSizeInBytes(), 0, ctx.AllRecordsSizeInBytes());
     DiskWriter tapeWriter("afterStageOne.bin", ctx.BufferSizeInBytes());
 
     while (tapeReader.IsSthToRead())
@@ -42,14 +42,26 @@ bool StageOne(Context& ctx, Buffers& buffers)
         // read at most n*b records
         for (std::size_t ithBufferIdx = 0; ithBufferIdx < buffers.NumberOfBuffers(); ithBufferIdx++)
         {
-            data_t* toBuffer = buffers.GetBuffer(ithBufferIdx).GetPointer();
+            Buffer& toBuffer = buffers.GetBuffer(ithBufferIdx);
 
-            if (tapeReader.ReadBlock((void*)toBuffer))
-                ++buffers.occupiedBuffers;
+            std::size_t readBytes = tapeReader.ReadBlock((void*)toBuffer.GetPointer());
+
+            if (readBytes > 0)
+            {
+                std::size_t readRecords = readBytes / ctx.RecordSizeInBytes();
+
+                buffers.occupiedBuffers += 1;
+                buffers.occupiedRecords += readRecords;
+                toBuffer.occupiedRecords = readRecords;
+            }
+            else
+            {
+                std::cout << "[!] StageOne - read 0 bytes" << std::endl;
+            }       
         }
 
         // sort records
-        Quicksort::Sort(buffers, 0, ctx.NumberOfRecordsInBuffer() * buffers.occupiedBuffers - 1);
+        Quicksort::Sort(buffers, 0, buffers.occupiedRecords - 1);
 
         // print check
         buffers.DumpToTXT("afterStageOne.txt");
@@ -63,6 +75,7 @@ bool StageOne(Context& ctx, Buffers& buffers)
             if (tapeWriter.WriteBlock((void*)fromBuffer))
                 --buffers.occupiedBuffers;
         }
+        buffers.occupiedRecords = 0;
     }
 
     return true;
@@ -70,7 +83,7 @@ bool StageOne(Context& ctx, Buffers& buffers)
 
 bool StageTwo()
 {
-
+    return true;
 }
 
 

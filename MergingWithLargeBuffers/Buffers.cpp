@@ -18,7 +18,9 @@ uint64_t Buffers::LocalRecordIdxFromGlobalRecordIdx(uint64_t ithGlobalRecordIdx)
 
 Buffers::Buffers(Context& ctx) :
 	_maxNumberOfRecordsInBuffer(ctx.NumberOfRecordsInBuffer()),
-	_recordSize(ctx.RecordSizeInType())
+	_recordSize(ctx.RecordSizeInType()),
+	occupiedBuffers(0),
+	occupiedRecords(0)
 {
 	const std::size_t numberOfBuffers = ctx.NumberOfBuffers();
 

@@ -94,6 +94,11 @@ std::size_t Context::AllBuffersSizeInType() const
     return _numberOfBuffers * BufferSizeInType();
 }
 
+std::size_t Context::AllRecordsSizeInBytes() const
+{
+    return _numberOfAllRecords * _recordSizeInBytes;
+}
+
 
 unsigned int Context::NumberOfRecords() const
 {
