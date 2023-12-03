@@ -20,12 +20,22 @@ private:
 	*/
 	const std::size_t _bufferSize;
 
+	/*
+	*	limit of bytes to write
+	*/
+	const std::size_t _bytesToWrite;
+
+	/*
+	*	already written bytes
+	*/
+	std::size_t _writtenBytes;
+
 
 public:
 
-	DiskWriter(std::string outputFile, std::size_t bufferSizeInBytes);
+	DiskWriter(std::string outputFile, std::size_t bufferSizeInBytes, std::size_t bytesToWrite);
 
-	bool WriteBlock(void* fromBuffer);
+	std::size_t WriteBlock(void* fromBuffer);
 };
 
 #endif // !DiskWriter_H

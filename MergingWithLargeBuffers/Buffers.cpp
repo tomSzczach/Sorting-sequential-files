@@ -79,7 +79,7 @@ void Buffers::Print()
 
 	for (Buffer buffer : _buffers)
 	{
-		std::cout << "\t| ";
+		std::cout << "\t";
 		buffer.Print();
 		std::cout << std::endl;
 	}

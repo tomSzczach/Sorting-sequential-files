@@ -51,8 +51,15 @@ data_t* Buffer::GetPointer()
 
 void Buffer::Print()
 {
-	for (int value : _buffer)
-		std::cout << value << " ";
+	const std::size_t values = occupiedRecords * _recordSize;
+
+	std::cout << "(" << occupiedRecords << ") ";
+
+	for (std::size_t ithValueIdx = 0; ithValueIdx < values; ithValueIdx++)
+	{
+		if (ithValueIdx % _recordSize == 0) std::cout << "| ";
+		std::cout << _buffer[ithValueIdx] << " ";	
+	}
 }
 
 
