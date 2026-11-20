@@ -1,12 +1,12 @@
 #include "DiskReader.h"
 
 
-DiskReader::DiskReader(std::string inputFile, std::size_t bufferSizeInBytes, std::size_t readFromByte, std::size_t readToByte) :
+DiskReader::DiskReader(std::string inputFile, std::size_t bufferSizeInBytes, std::size_t readFromOffset, std::size_t howManyBytes) :
 	_inputFile(inputFile),
 	_bufferSize(bufferSizeInBytes), 
-	_firstOffset(readFromByte), 
-	_currentOffset(readFromByte),
-	_lastOffset(readToByte)
+	_fromOffset(readFromOffset),
+	_currentOffset(readFromOffset),
+	_toOffset(readFromOffset + howManyBytes - 1)
 {
 	std::ifstream file(_inputFile, std::ios::binary);
 	if (!file.is_open())
@@ -26,24 +26,24 @@ std::size_t DiskReader::ReadBlock(void* toBuffer)
 {
 	if (toBuffer == nullptr)
 	{
-		std::cout << "[!] DiskReader::ReadBlock - toBuffer == nullptr" << std::endl;
+		//std::cout << "[!] DiskReader::ReadBlock - toBuffer == nullptr" << std::endl;
 		return 0;
 	}
 
 	if (_currentOffset >= _fileSize)
 	{
-		std::cout << "[!] DiskReader::ReadBlock - _currentOffset >= _fileSize" << std::endl;
+		//std::cout << "[!] DiskReader::ReadBlock - _currentOffset >= _fileSize" << std::endl;
 		return 0;
 	}
 
-	if (_currentOffset >= _lastOffset)
+	if (_currentOffset > _toOffset)
 	{
-		std::cout << "[!] DiskReader::ReadBlock - _currentOffset >= _readToOffset" << std::endl;
+		//std::cout << "[!] DiskReader::ReadBlock - _currentOffset > _readToOffset" << std::endl;
 		return 0;
 	}
 
-	std::size_t bytesToRead = (_currentOffset + _bufferSize > _lastOffset)
-		? _lastOffset - _currentOffset + 1
+	std::size_t bytesToRead = (_currentOffset + _bufferSize > _toOffset)
+		? _toOffset - _currentOffset + 1
 		: _bufferSize
 		;
 
@@ -66,5 +66,5 @@ std::size_t DiskReader::ReadBlock(void* toBuffer)
 
 bool DiskReader::IsSthToRead() const
 {
-	return (_currentOffset <= _lastOffset && _currentOffset < _fileSize) ? true : false;
+	return (_currentOffset <= _toOffset && _currentOffset < _fileSize) ? true : false;
 }

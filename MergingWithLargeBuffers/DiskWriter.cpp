@@ -13,13 +13,13 @@ std::size_t DiskWriter::WriteBlock(void* fromBuffer)
 {
 	if (fromBuffer == nullptr)
 	{
-		std::cout << "[!] DiskWriter::WriteBlock - fromBuffer == nullptr" << std::endl;
+		//std::cout << "[!] DiskWriter::WriteBlock - fromBuffer == nullptr" << std::endl;
 		return 0;
 	}
 
 	if (_writtenBytes > _bytesToWrite)
 	{
-		std::cout << "[!] DiskWriter::WriteBlock - writtenBytes > bytesToWrite" << std::endl;
+		//std::cout << "[!] DiskWriter::WriteBlock - writtenBytes > bytesToWrite" << std::endl;
 		return 0;
 	}
 

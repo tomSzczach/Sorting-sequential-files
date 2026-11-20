@@ -57,6 +57,11 @@ Context::Context(std::string pathToConfigFile)
 
 bool Context::IsConfigFileReadSuccessfully() const
 {
+    std::cout << "b = " << _numberOfRecordsInBuffer << std::endl;
+    std::cout << "N = " << _numberOfAllRecords << std::endl;
+    std::cout << "n = " << _numberOfBuffers << std::endl;
+    std::cout << "R=d+1 = " << _recordSizeInType << std::endl;
+    std::cout << "-- -- -- -- -- -- -- -- -- --" << std::endl;
     return _isConfigFileRead;
 }
 

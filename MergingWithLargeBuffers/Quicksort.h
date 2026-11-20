@@ -17,7 +17,7 @@ private:
 
 public:
 
-	static void Sort(Buffers& buffers, uint64_t firstRecordIdx, uint64_t lastRecordIdx);
+	static void Sort(Buffers& buffers, uint64_t firstRecordIdx, uint64_t lastRecordIdx, int i);
 
 };
 
