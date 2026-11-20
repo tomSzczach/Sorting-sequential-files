@@ -13,4 +13,6 @@ x86/
 
 ## Ignore custom config files
 *.txt
+!/results/results.txt
+
 *.bin

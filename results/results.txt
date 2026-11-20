@@ -1,0 +1,358 @@
+b = 10
+N = 100
+n = 11
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 10
+NUM_OF_WRITES = 10
+NUM_OF_I/O_OPERATIONS = 20
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 0
+elapsed time: 0.0161812s
+ - - - -
+
+b = 10
+N = 100
+n = 101
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 10
+NUM_OF_WRITES = 10
+NUM_OF_I/O_OPERATIONS = 20
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 0
+elapsed time: 0.023188s
+ - - - -
+
+b = 10
+N = 100
+n = 1001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 10
+NUM_OF_WRITES = 10
+NUM_OF_I/O_OPERATIONS = 20
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 0
+elapsed time: 0.0334676s
+ - - - -
+
+/////////
+
+b = 10
+N = 1000
+n = 11
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 200
+NUM_OF_WRITES = 200
+NUM_OF_I/O_OPERATIONS = 400
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 1
+elapsed time: 0.144931s
+ - - - -
+
+b = 10
+N = 1000
+n = 101
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 100
+NUM_OF_WRITES = 100
+NUM_OF_I/O_OPERATIONS = 200
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 0
+elapsed time: 0.0694814s
+ - - - -
+
+b = 10
+N = 1000
+n = 1001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 100
+NUM_OF_WRITES = 100
+NUM_OF_I/O_OPERATIONS = 200
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 0
+elapsed time: 0.0762667s
+ - - - -
+
+/////////
+
+b = 10
+N = 10000
+n = 11
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 3000
+NUM_OF_WRITES = 3000
+NUM_OF_I/O_OPERATIONS = 6000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 2
+elapsed time: 1.7178s
+ - - - -
+
+b = 10
+N = 10000
+n = 101
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 2000
+NUM_OF_WRITES = 2000
+NUM_OF_I/O_OPERATIONS = 4000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 1
+elapsed time: 1.02642s
+ - - - -
+
+b = 10
+N = 10000
+n = 1001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 1000
+NUM_OF_WRITES = 1000
+NUM_OF_I/O_OPERATIONS = 2000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 0
+elapsed time: 0.527991s
+ - - - -
+
+/////////
+
+b = 10
+N = 100000
+n = 11
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 40000
+NUM_OF_WRITES = 40000
+NUM_OF_I/O_OPERATIONS = 80000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 3
+elapsed time: 23.524s
+ - - - -
+
+b = 10
+N = 100000
+n = 101
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 20000
+NUM_OF_WRITES = 20000
+NUM_OF_I/O_OPERATIONS = 40000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 1
+elapsed time: 10.7584s
+ - - - -
+
+b = 10
+N = 100000
+n = 1001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 20000
+NUM_OF_WRITES = 20000
+NUM_OF_I/O_OPERATIONS = 40000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 1
+elapsed time: 11.6076s
+ - - - -
+
+/////////
+
+b = 10
+N = 1000000
+n = 11
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 500000
+NUM_OF_WRITES = 500000
+NUM_OF_I/O_OPERATIONS = 1000000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 4
+elapsed time: 296.385s
+ - - - -
+
+b = 10
+N = 1000000
+n = 101
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 300000
+NUM_OF_WRITES = 300000
+NUM_OF_I/O_OPERATIONS = 600000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 2
+elapsed time: 174.384s
+ - - - -
+
+b = 10
+N = 1000000
+n = 1001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 200000
+NUM_OF_WRITES = 200000
+NUM_OF_I/O_OPERATIONS = 400000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 1
+elapsed time: 112.12s
+ - - - -
+
+//
+
+b = 10
+N = 1000000
+n = 10001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 200000
+NUM_OF_WRITES = 200000
+NUM_OF_I/O_OPERATIONS = 400000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 1
+elapsed time: 34.6708s
+ - - - -
+
+b = 10
+N = 1000000
+n = 100001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 100000
+NUM_OF_WRITES = 100000
+NUM_OF_I/O_OPERATIONS = 200000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 0
+elapsed time: 15.0023s
+ - - - -
+
+b = 10
+N = 1000000
+n = 1000001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 100000
+NUM_OF_WRITES = 100000
+NUM_OF_I/O_OPERATIONS = 200000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 0
+elapsed time: 16.1662s
+ - - - -
+
+
+/////////
+
+b = 10
+N = 10000000
+n = 11
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 6000000
+NUM_OF_WRITES = 6000000
+NUM_OF_I/O_OPERATIONS = 12000000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 5
+elapsed time: 1122.81s
+ - - - -
+
+b = 10
+N = 10000000
+n = 101
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 3000000
+NUM_OF_WRITES = 3000000
+NUM_OF_I/O_OPERATIONS = 6000000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 2
+elapsed time: 602.483s
+ - - - -
+
+b = 10
+N = 10000000
+n = 1001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 2000000
+NUM_OF_WRITES = 2000000
+NUM_OF_I/O_OPERATIONS = 4000000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 1
+elapsed time: 391.581s
+ - - - -
+
+//
+
+b = 10
+N = 10000000
+n = 10001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 2000000
+NUM_OF_WRITES = 2000000
+NUM_OF_I/O_OPERATIONS = 4000000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 1
+elapsed time: 410.478s
+ - - - -
+
+b = 10
+N = 10000000
+n = 100001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 2000000
+NUM_OF_WRITES = 2000000
+NUM_OF_I/O_OPERATIONS = 4000000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 1
+elapsed time: 487.589s
+ - - - -
+
+b = 10
+N = 10000000
+n = 1000001
+R=d+1 = 4
+-- -- -- -- -- -- -- -- -- --
+ - - - -
+NUM_OF_READS = 1000000
+NUM_OF_WRITES = 1000000
+NUM_OF_I/O_OPERATIONS = 2000000
+NUM_OF_CYCLES_DURING_STAGE_1 = 1 (const)
+NUM_OF_CYCLES_DURING_STAGE_2 = 0
+elapsed time: 247.628s
+ - - - -
+
+
+
+
+
+
+
+
